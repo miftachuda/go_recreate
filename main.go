@@ -93,8 +93,6 @@ func main() {
 	SessionIDString := bytesToHex(SessionID)
 	hexString := "41470102000000000008000000080000000100000001280000000000ed5793750100080000000300"
 	hexString2 := "41470102000100000016000000160000000100000001280200000000ed4a937d090016000000"
-	//       _ := "41470102000100000016000000160000000100000001280200000000ED4A937D0900160000003E6839DA930100003E6839DA93010000"
-
 	payload2 := hexString2 + SessionIDString
 
 	// Convert the hex string to a byte slice
@@ -137,7 +135,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error reading response: %v\n", err)
 	}
-
+	/* -----BEGIN PUBLIC KEY-----
+	MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6iIrm+nGADk7kjvWZ0co
+	+9lP5/GSyaQdsQqVu6afe9bPomjrOA3UnC7K6a6FtqICGhTYorGSgYWGjfjiMVFs
+	EmYRcsimC1rPqOZ+sy6BqkPXcLI+OOB1s+QmT7ID5F0hQwtE1YHHL8G9qKP5e0tr
+	+tr34wkF17mrq0b5T8Prh3uS5BwjjyAolCzCiH2mhw71yDXYv++PzNB+5kjUTFbC
+	DMjnMRNUslRTEOceA4JSKrGwa/Q4FGk2/3t73AVFjuN39g4oIoBgiMOAdVrl6vUt
+	wLbTrCSAVO6Z5Hc1zVIoXI13xWB6r+lCRq0GmTvOcy4LTsbukBHrxgRwwpyXBD3i
+	YQIDAQAB
+	-----END PUBLIC KEY----- */
 	realbuffer := buffer2[70:n2]
 	key := []byte(SessionID)
 
